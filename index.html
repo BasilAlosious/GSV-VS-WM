@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GSV vs Mystics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <main class="page" data-node-id="1697:713">
+    <section class="hero panel panel--hero" data-node-id="1645:590">
+      <video class="hero__media" aria-hidden="true" autoplay muted loop playsinline preload="metadata">
+        <source src="./assets/cosmos_1107870972.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">CHASE CENTER</p>
+        <h1 class="hero__title">
+          <span class="hero__title-top">
+            <span>GSV</span>
+            <span class="hero__vs">vs</span>
+          </span>
+          <span>MYSTICS</span>
+        </h1>
+        <p class="hero__copy">
+          Experience an unforgettable night of basketball from Oracle Club Suite
+          S23. Enjoy premium hospitality, exclusive suite access, and courtside
+          energy as GSV takes on the Washington Mystics at Chase Center.
+        </p>
+        <p class="hero__meta">07.20.2026 | 7:00 PM</p>
+        <a class="hero__cta" href="#tickets">GET A PASS</a>
+      </div>
+    </section>
+
+    <!-- Sticky scroll wrapper: section pins while ball completes all 4 stops -->
+    <div class="timeline-sticky-outer">
+    <section class="panel panel--dark timeline" data-node-id="1655:597">
+      <div class="timeline__frame" aria-hidden="true">
+        <span class="timeline__line timeline__line--top"></span>
+        <span class="timeline__line timeline__line--bottom"></span>
+        <span class="timeline__line timeline__line--left"></span>
+        <span class="timeline__line timeline__line--right"></span>
+      </div>
+      <div class="shell shell--timeline">
+        <div class="timeline__inner">
+          <header class="section-head section-head--timeline">
+            <h2 class="section-head__title">Event Timeline</h2>
+            <p class="section-head__copy">
+              From arrival to tip-off, enjoy a seamless VIP experience with
+              exclusive suite access, premium hospitality, and an unforgettable
+              night at Chase Center.
+            </p>
+          </header>
+
+          <div class="timeline__row">
+            <!-- Rail: track line + stop nodes + animated ball -->
+            <div class="timeline__rail" id="timelineRail" aria-hidden="true">
+              <div class="timeline__rail-line">
+                <div class="timeline__rail-fill" id="timelineFill"></div>
+              </div>
+              <img class="timeline__node" data-node="0" src="./assets/hoop.png" alt="" />
+              <img class="timeline__node" data-node="1" src="./assets/hoop.png" alt="" />
+              <img class="timeline__node" data-node="2" src="./assets/hoop.png" alt="" />
+              <img class="timeline__node" data-node="3" src="./assets/hoop.png" alt="" />
+              <div class="timeline__ball-wrap" id="timelineBall">
+                <img class="timeline__ball-img" src="./assets/marker.png" alt="" />
+              </div>
+            </div>
+            <!-- Stage labels under each stop -->
+            <div class="timeline__stages">
+              <div class="timeline__stage is-active" data-stage="0">
+                <p class="timeline__time">5:30 PM</p>
+                <p class="timeline__label">Doors Open</p>
+              </div>
+              <div class="timeline__stage" data-stage="1">
+                <p class="timeline__time">6:15 PM</p>
+                <p class="timeline__label">Recommended Arrival</p>
+              </div>
+              <div class="timeline__stage" data-stage="2">
+                <p class="timeline__time">7:00 PM</p>
+                <p class="timeline__label">Trade Off</p>
+              </div>
+              <div class="timeline__stage" data-stage="3">
+                <p class="timeline__time">Post Game</p>
+                <p class="timeline__label">Suite Access Ends</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    </div><!-- /.timeline-sticky-outer -->
+
+    <section class="panel panel--dark info" data-node-id="1659:665">
+      <div class="info__frame" aria-hidden="true">
+        <span class="info__line info__line--top"></span>
+        <span class="info__line info__line--bottom"></span>
+        <span class="info__line info__line--left"></span>
+        <span class="info__line info__line--right"></span>
+      </div>
+      <div class="shell shell--narrow">
+        <header class="section-head">
+          <h2 class="section-head__title">Important Information</h2>
+          <p class="section-head__copy">
+            A few important details to help you make the most of your evening at
+            Chase Center.
+          </p>
+        </header>
+
+        <div class="info__content">
+          <div class="info__visual" aria-hidden="true">
+            <div class="info__measure info__measure--top">
+              <span>14</span>
+            </div>
+            <div class="info__measure info__measure--bottom">
+              <span>14</span>
+            </div>
+            <div class="info__measure info__measure--left">
+              <span class="info__measure-line info__measure-line--lower" aria-hidden="true"></span>
+              <span class="info__measure-line info__measure-line--upper" aria-hidden="true"></span>
+              <span>06</span>
+            </div>
+            <img class="info__bag" src="./assets/bag.png" alt="" />
+          </div>
+
+          <p class="info__copy" id="info-copy">
+            *Please note, no bags larger than 14&quot;x6&quot;x14&quot; will be
+            allowed inside the building. You can refer to the bag policy in the
+            A-Z Guide linked above.
+          </p>
+        </div>
+
+        <div class="tabs" id="tickets" role="tablist" aria-label="Important information">
+          <button class="tabs__item is-active" type="button" role="tab" aria-selected="true"
+            data-tab="bags"
+            data-image="./assets/bag.png"
+            data-copy='*Please note, no bags larger than 14&quot;x6&quot;x14&quot; will be allowed inside the building. You can refer to the bag policy in the A-Z Guide linked above.'>
+            Bags
+          </button>
+          <button class="tabs__item" type="button" role="tab" aria-selected="false"
+            data-tab="payments"
+            data-image="./assets/payments.png"
+            data-copy="All concessions and retail points at Chase Center support cashless checkout. Plan on using a card or a mobile wallet for the fastest entry and in-suite service.">
+            Payments
+          </button>
+          <button class="tabs__item" type="button" role="tab" aria-selected="false"
+            data-tab="tickets"
+            data-image="./assets/tickets.png"
+            data-copy="Keep your event ticket ready on your phone before you arrive. Mobile tickets speed up security screening and help the suite host check your group in faster.">
+            Tickets
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--dark closing" data-node-id="1677:612">
+      <div class="shell shell--closing">
+        <div class="closing__copy">
+          <h2 class="closing__title">
+            <span>See You At</span>
+            <span>Chase Centre</span>
+          </h2>
+          <p class="closing__body">
+            Thank you for joining us. We look forward to providing an exceptional
+            game-day experience, complete with premium suite access, hospitality,
+            and exclusive event amenities.
+          </p>
+        </div>
+
+        <div class="closing__media">
+          <img class="closing__image" src="./assets/arena.png" alt="Chase Center exterior" />
+          <div class="closing__fade" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+  <script>
+    // ─── Timeline: sticky scroll + ball travels stop-to-stop ─────────────────
+    (function () {
+      const ball    = document.getElementById('timelineBall');
+      const rail    = document.getElementById('timelineRail');
+      const section = document.querySelector('.timeline');
+      const wrapper = document.querySelector('.timeline-sticky-outer');
+      const nodes   = Array.from(document.querySelectorAll('.timeline__node'));
+      const stages  = Array.from(document.querySelectorAll('.timeline__stage'));
+      const fill    = document.getElementById('timelineFill');
+      if (!ball || !rail || !section || !wrapper) return;
+
+      const STOPS = 4;
+      const AMP   = 18;
+
+      let stopX = [];
+
+      // Only run animation when the rail is visible (hidden on mobile)
+      function isRailVisible() {
+        return getComputedStyle(rail).display !== 'none';
+      }
+
+      function computeStops() {
+        if (!isRailVisible()) { stopX = []; return; }
+        const railRect = rail.getBoundingClientRect();
+        stopX = stages.map(el => {
+          const r = el.getBoundingClientRect();
+          return (r.left + r.width / 2) - railRect.left;
+        });
+        nodes.forEach((n, i) => {
+          if (stopX[i] != null) n.style.left = stopX[i] + 'px';
+        });
+        ball.style.transform = `translateX(${stopX[0] ?? 0}px) translateY(0px)`;
+
+        // Trim the rail line to run exactly from first stop to last stop
+        const railLine = rail.querySelector('.timeline__rail-line');
+        if (railLine && stopX.length > 1) {
+          railLine.style.left  = stopX[0] + 'px';
+          railLine.style.right = (railRect.width - stopX[stopX.length - 1]) + 'px';
+          railLine.style.width = 'auto';
+        }
+        // Size the gradient to span the full track so it looks continuous as it reveals
+        if (fill && stopX.length > 1) {
+          const trackW = stopX[stopX.length - 1] - stopX[0];
+          fill.style.backgroundSize  = trackW + 'px 100%';
+          fill.style.backgroundImage = `linear-gradient(to right, #7B3A10, #C4722A, #E89830, #F0B040)`;
+        }
+      }
+
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+      function onScroll() {
+        if (!isRailVisible()) return; // bail on mobile
+        if (!stopX.length) computeStops();
+        if (!stopX.length) return;    // still empty = mobile
+
+        // Read progress from the WRAPPER (not the sticky section)
+        const rect  = wrapper.getBoundingClientRect();
+        const viewH = window.innerHeight;
+
+        // scrolled = how many px past the wrapper top we've gone
+        const scrolled        = -rect.top;
+        const totalScrollable = Math.max(1, rect.height - viewH);
+        const p = Math.min(1, Math.max(0, scrolled / totalScrollable));
+
+        const floatStop  = p * (STOPS - 1);
+        const fromStop   = Math.min(STOPS - 2, Math.floor(floatStop));
+        const toStop     = fromStop + 1;
+        const localP     = floatStop - fromStop;
+        const easedP     = easeInOut(localP);
+        const activeStop = Math.round(floatStop);
+
+        // Ball X: interpolate between stops
+        const x = lerp(stopX[fromStop] ?? 0, stopX[toStop] ?? 0, easedP);
+
+        // Ball Y: gentle sine arc between stops
+        const y = -Math.sin(localP * Math.PI) * AMP;
+
+        ball.style.transform = `translateX(${x}px) translateY(${y}px)`;
+
+        const atStop = localP < 0.08 || localP > 0.92;
+        ball.classList.toggle('is-at-stop', atStop);
+
+        nodes.forEach((n, i)  => n.classList.toggle('is-active', i === activeStop));
+        stages.forEach((s, i) => s.classList.toggle('is-active', i === activeStop));
+
+        // Grow the court-colour fill to track the ball's X position
+        if (fill && stopX.length > 1) {
+          const fillW = Math.max(0, x - stopX[0]);
+          fill.style.width = fillW + 'px';
+        }
+      }
+
+      // Debounced resize: clear cached positions so they're re-read after layout settles
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          stopX = [];
+          requestAnimationFrame(() => { computeStops(); onScroll(); });
+        }, 150);
+      });
+
+      // Initial run: use rAF so layout is fully painted before we read positions
+      function init() {
+        requestAnimationFrame(() => { computeStops(); onScroll(); });
+      }
+
+      if (document.readyState === 'complete') { init(); }
+      else window.addEventListener('load', init);
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+</body>
+
+</html>
