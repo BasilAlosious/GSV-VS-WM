@@ -140,11 +140,14 @@ a {
 }
 
 .hero__eyebrow {
-  margin: 0 0 22px;
-  color: #f2f2f2;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.hero__logo {
+  display: block;
+  height: 56px;
+  width: auto;
+  margin-left: 6px;
 }
 
 .hero__title {
@@ -870,8 +873,11 @@ a {
   }
 
   .hero__eyebrow {
-    margin-bottom: 18px;
-    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .hero__logo {
+    height: 36px;
   }
 
   .hero__title {
