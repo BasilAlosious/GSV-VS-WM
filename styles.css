@@ -273,7 +273,7 @@ a {
 
 /* ── Sticky scroll wrapper ──────────────────────────────────── */
 .timeline-sticky-outer {
-  height: 400vh;
+  height: 180vh;
   position: relative;
 }
 
@@ -289,8 +289,8 @@ a {
 
 /* ── Info / bag-toggle section ──────────────────────────────── */
 .info {
-  min-height: 796px;
-  padding: clamp(72px, 6vw, 116px) 0 clamp(80px, 7vw, 126px);
+  min-height: 1100px;
+  padding: clamp(48px, 4vw, 80px) 0 clamp(80px, 8vw, 140px);
 }
 
 .info__frame {
@@ -318,14 +318,15 @@ a {
 }
 
 .info__line--bottom {
-  top: 740px;
+  top: auto;
+  bottom: 56px;
 }
 
 .info__line--left,
 .info__line--right {
-  top: 0;
+  top: 56px;
   width: var(--line-thickness);
-  height: 796px;
+  height: calc(100% - 112px);
   background-image: repeating-linear-gradient(to bottom,
       var(--line) 0 var(--line-dash),
       transparent var(--line-dash) calc(var(--line-dash) + var(--line-gap)));
@@ -562,6 +563,7 @@ a {
 
 .info__content {
   display: grid;
+  align-items: start;
   justify-items: center;
   gap: clamp(28px, 3vw, 60px);
   margin-top: clamp(48px, 5.5vw, 100px);
@@ -717,6 +719,7 @@ a {
 
 .info__copy {
   max-width: 672px;
+  min-height: 6.5em; /* reserves 5 lines — prevents height jump when tab text changes */
   margin: 0;
   text-align: center;
   font-size: clamp(0.875rem, 1vw, 1.125rem);
@@ -733,7 +736,7 @@ a {
   width: max-content;
   max-width: 100%;
   gap: 12px;
-  margin: clamp(24px, 3vw, 48px) auto 0;
+  margin: clamp(8px, 0.8vw, 12px) auto 0;
   padding: 9px 18px;
   border-radius: 70px;
   background: #2d2d2d;
@@ -810,7 +813,7 @@ a {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: clamp(431px, 38vw, 680px);
+  min-height: clamp(520px, 45vw, 820px);
 }
 
 .closing__copy {
