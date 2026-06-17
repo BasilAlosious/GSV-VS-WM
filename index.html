@@ -16,12 +16,12 @@
   <main class="page" data-node-id="1697:713">
     <section class="hero panel panel--hero" data-node-id="1645:590">
       <video class="hero__media" aria-hidden="true" autoplay muted loop playsinline preload="metadata">
-        <source src="./assets/cosmos_1107870972.mp4" type="video/mp4" />
+        <source src="./assets/magnific_video-upscale_LUCZ4G0swO.mp4" type="video/mp4" />
       </video>
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
         <div class="hero__eyebrow">
-          <img src="./assets/KODEX logo.png" alt="Kodex" class="hero__logo" />
+          <img src="./assets/Mask group logo 3x.png" alt="Kodex" class="hero__logo" />
         </div>
         <h1 class="hero__title">
           <span class="hero__title-top">
@@ -31,12 +31,13 @@
           <span>MYSTICS</span>
         </h1>
         <p class="hero__copy">
-          Experience an unforgettable night of basketball from Oracle Club Suite
-          S23. Enjoy premium hospitality, exclusive suite access, and courtside
-          energy as GSV takes on the Washington Mystics at Chase Center.
+          Join the Kodex team for an unforgettable night of basketball from Oracle Club Suite S23.
+          Connect with fellow industry leaders, enjoy premium hospitality and exclusive suite access,
+          and experience the electric atmosphere of Chase Center as the Golden State Valkyries take on
+          the Washington Mystics. Great conversations, incredible views, and basketball await.
         </p>
         <p class="hero__meta">07.20.2026 | 7:00 PM</p>
-        <a class="hero__cta" href="#tickets">GET A PASS</a>
+        <a class="hero__cta" href="#tickets">Get a Pass</a>
       </div>
     </section>
 
@@ -51,12 +52,11 @@
       </div>
       <div class="shell shell--timeline">
         <div class="timeline__inner">
-          <header class="section-head section-head--timeline">
+          <header class="section-head section-head--timeline reveal">
             <h2 class="section-head__title">Event Timeline</h2>
             <p class="section-head__copy">
-              From arrival to tip-off, enjoy a seamless VIP experience with
-              exclusive suite access, premium hospitality, and an unforgettable
-              night at Chase Center.
+              Enjoy a VIP experience with exclusive suite access, premium hospitality,
+              and an unforgettable night at the Chase Center.
             </p>
           </header>
 
@@ -108,7 +108,7 @@
         <span class="info__line info__line--right"></span>
       </div>
       <div class="shell shell--narrow">
-        <header class="section-head">
+        <header class="section-head reveal">
           <h2 class="section-head__title">Important Information</h2>
           <p class="section-head__copy">
             A few important details to help you make the most of your evening at
@@ -116,7 +116,7 @@
           </p>
         </header>
 
-        <div class="info__content">
+        <div class="info__content reveal" data-delay="200">
           <div class="info__visual" aria-hidden="true">
             <div class="info__measure info__measure--top">
               <span>14</span>
@@ -139,7 +139,7 @@
           </p>
         </div>
 
-        <div class="tabs" id="tickets" role="tablist" aria-label="Important information">
+        <div class="tabs reveal" id="tickets" role="tablist" aria-label="Important information" data-delay="300">
           <button class="tabs__item is-active" type="button" role="tab" aria-selected="true"
             data-tab="bags"
             data-image="./assets/bag.png"
@@ -159,20 +159,25 @@
             Tickets
           </button>
         </div>
+
+        <a href="https://chasecenter.com/a-to-z-guide" target="_blank" rel="noopener noreferrer" class="info__guide-link reveal" data-delay="400">
+          Chase Center A&#8209;Z Guide
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </section>
 
     <section class="panel panel--dark closing" data-node-id="1677:612">
       <div class="shell shell--closing">
         <div class="closing__copy">
-          <h2 class="closing__title">
+          <h2 class="closing__title reveal">
             <span>See You At</span>
             <span>Chase Centre</span>
           </h2>
-          <p class="closing__body">
-            Thank you for joining us. We look forward to providing an exceptional
-            game-day experience, complete with premium suite access, hospitality,
-            and exclusive event amenities.
+          <p class="closing__body reveal" data-delay="150">
+            We look forward to spending the first night of TrustCon with you!
           </p>
         </div>
 
@@ -186,7 +191,34 @@
 
   <script src="./script.js"></script>
   <script>
-    // ─── Timeline: sticky scroll + ball travels stop-to-stop ─────────────────
+    // ─── Hero video: slow playback ────────────────────────────────────────────
+    (function () {
+      const video = document.querySelector('.hero__media');
+      if (!video) return;
+      const RATE = 0.6; // 60% speed — adjust between 0.4 (very slow) and 0.8 (subtle)
+      video.playbackRate = RATE;
+      video.addEventListener('canplay', () => { video.playbackRate = RATE; });
+    })();
+
+    // ─── Scroll reveal (IntersectionObserver) ────────────────────────────────
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!els.length || !('IntersectionObserver' in window)) {
+        // fallback: show all immediately
+        els.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(el => observer.observe(el));
+    })();
+
     (function () {
       const ball    = document.getElementById('timelineBall');
       const rail    = document.getElementById('timelineRail');
