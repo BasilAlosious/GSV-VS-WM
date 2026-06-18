@@ -851,6 +851,13 @@ a {
   letter-spacing: 0.02em;
 }
 
+/* CTA mirrored from the hero into the closing section.
+   Cancel the hero's load animation so the .reveal scroll-in handles entrance. */
+.closing__cta {
+  margin-top: clamp(20px, 2.5vw, 32px);
+  animation: none;
+}
+
 /* Image is now a natural grid item — fills right column edge-to-edge */
 .closing__media {
   position: relative;
