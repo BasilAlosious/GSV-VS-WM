@@ -1,5 +1,11 @@
 ---
+export const prerender = true;
+
 import '../styles/global.css';
+
+// Webflow Cloud serves this app under a mount path (BASE_URL). Prefix all
+// static asset URLs so they resolve correctly when mounted on a subpath.
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 ---
 
 <!DOCTYPE html>
@@ -32,12 +38,12 @@ import '../styles/global.css';
           playsinline
           preload="metadata"
         >
-          <source src="/assets/magnific_video-upscale_LUCZ4G0swO.mp4" type="video/mp4" />
+          <source src={`${base}/assets/magnific_video-upscale_LUCZ4G0swO.mp4`} type="video/mp4" />
         </video>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__content">
           <div class="hero__eyebrow">
-            <img src="/assets/Mask group logo 3x.png" alt="Kodex" class="hero__logo" />
+            <img src={`${base}/assets/Mask group logo 3x.png`} alt="Kodex" class="hero__logo" />
           </div>
           <h1 class="hero__title">
             <span class="hero__title-top">
@@ -82,12 +88,12 @@ import '../styles/global.css';
                   <div class="timeline__rail-line">
                     <div class="timeline__rail-fill" id="timelineFill"></div>
                   </div>
-                  <img class="timeline__node" data-node="0" src="/assets/hoop.png" alt="" />
-                  <img class="timeline__node" data-node="1" src="/assets/hoop.png" alt="" />
-                  <img class="timeline__node" data-node="2" src="/assets/hoop.png" alt="" />
-                  <img class="timeline__node" data-node="3" src="/assets/hoop.png" alt="" />
+                  <img class="timeline__node" data-node="0" src={`${base}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="1" src={`${base}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="2" src={`${base}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="3" src={`${base}/assets/hoop.png`} alt="" />
                   <div class="timeline__ball-wrap" id="timelineBall">
-                    <img class="timeline__ball-img" src="/assets/marker.png" alt="" />
+                    <img class="timeline__ball-img" src={`${base}/assets/marker.png`} alt="" />
                   </div>
                 </div>
                 <!-- Stage labels under each stop -->
@@ -144,7 +150,7 @@ import '../styles/global.css';
                 <span class="info__measure-line info__measure-line--upper" aria-hidden="true"></span>
                 <span>06</span>
               </div>
-              <img class="info__bag" src="/assets/bag.png" alt="" />
+              <img class="info__bag" src={`${base}/assets/bag.png`} alt="" />
             </div>
 
             <p class="info__copy" id="info-copy">
@@ -156,19 +162,19 @@ import '../styles/global.css';
           <div class="tabs reveal" id="tickets" role="tablist" aria-label="Important information" data-delay="300">
             <button class="tabs__item is-active" type="button" role="tab" aria-selected="true"
               data-tab="bags"
-              data-image="/assets/bag.png"
+              data-image={`${base}/assets/bag.png`}
               data-copy='*Please note, no bags larger than 14&quot;x6&quot;x14&quot; will be allowed inside the building. You can refer to the bag policy in the A-Z Guide linked above.'>
               Bags
             </button>
             <button class="tabs__item" type="button" role="tab" aria-selected="false"
               data-tab="payments"
-              data-image="/assets/payments.png"
+              data-image={`${base}/assets/payments.png`}
               data-copy="All concessions and retail points at Chase Center support cashless checkout. Plan on using a card or a mobile wallet for the fastest entry and in-suite service.">
               Payments
             </button>
             <button class="tabs__item" type="button" role="tab" aria-selected="false"
               data-tab="tickets"
-              data-image="/assets/tickets.png"
+              data-image={`${base}/assets/tickets.png`}
               data-copy="Keep your event ticket ready on your phone before you arrive. Mobile tickets speed up security screening and help the suite host check your group in faster.">
               Tickets
             </button>
@@ -197,7 +203,7 @@ import '../styles/global.css';
           </div>
 
           <div class="closing__media">
-            <img class="closing__image" src="/assets/arena.png" alt="Chase Center exterior" />
+            <img class="closing__image" src={`${base}/assets/arena.png`} alt="Chase Center exterior" />
             <div class="closing__fade" aria-hidden="true"></div>
           </div>
         </div>
