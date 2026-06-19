@@ -1,11 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "gsv-vs-mystics",
+  "main": "./dist/_worker.js/index.js",
   "compatibility_date": "2025-04-15",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist/client"
+    "directory": "./dist"
   },
   "observability": {
     "enabled": true

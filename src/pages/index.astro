@@ -1,11 +1,13 @@
 ---
-export const prerender = true;
-
 import '../styles/global.css';
 
-// Webflow Cloud serves this app under a mount path (BASE_URL). Prefix all
-// static asset URLs so they resolve correctly when mounted on a subpath.
-const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+// On Webflow Cloud the app is served from a mount path, so static assets must be
+// prefixed. ASSETS_PREFIX is injected in production; BASE_URL covers local dev.
+const assetsPrefix = (
+  import.meta.env.ASSETS_PREFIX ||
+  import.meta.env.BASE_URL ||
+  ''
+).replace(/\/+$/, '');
 ---
 
 <!DOCTYPE html>
@@ -38,12 +40,12 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
           playsinline
           preload="metadata"
         >
-          <source src={`${base}/assets/magnific_video-upscale_LUCZ4G0swO.mp4`} type="video/mp4" />
+          <source src={`${assetsPrefix}/assets/magnific_video-upscale_LUCZ4G0swO.mp4`} type="video/mp4" />
         </video>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__content">
           <div class="hero__eyebrow">
-            <img src={`${base}/assets/Mask group logo 3x.png`} alt="Kodex" class="hero__logo" />
+            <img src={`${assetsPrefix}/assets/Mask group logo 3x.png`} alt="Kodex" class="hero__logo" />
           </div>
           <h1 class="hero__title">
             <span class="hero__title-top">
@@ -53,10 +55,7 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
             <span>MYSTICS</span>
           </h1>
           <p class="hero__copy">
-            Join the Kodex team for an unforgettable night of basketball from Oracle Club Suite S23.
-            Connect with fellow industry leaders, enjoy premium hospitality and exclusive suite access,
-            and experience the electric atmosphere of Chase Center as the Golden State Valkyries take on
-            the Washington Mystics. Great conversations, incredible views, and basketball await.
+            Join Kodex in Oracle Club Suite S23 for an evening of basketball, networking, and premium hospitality as the Golden State Valkyries take on the Washington Mystics at the Chase Center.
           </p>
           <p class="hero__meta">07.20.2026 | 7:00 PM</p>
           <a class="hero__cta" href="https://share.hsforms.com/1zqjce4jtSxeJMg0_vTkXwwqam6w" target="_blank" rel="noopener noreferrer">Register Now</a>
@@ -88,12 +87,12 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
                   <div class="timeline__rail-line">
                     <div class="timeline__rail-fill" id="timelineFill"></div>
                   </div>
-                  <img class="timeline__node" data-node="0" src={`${base}/assets/hoop.png`} alt="" />
-                  <img class="timeline__node" data-node="1" src={`${base}/assets/hoop.png`} alt="" />
-                  <img class="timeline__node" data-node="2" src={`${base}/assets/hoop.png`} alt="" />
-                  <img class="timeline__node" data-node="3" src={`${base}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="0" src={`${assetsPrefix}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="1" src={`${assetsPrefix}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="2" src={`${assetsPrefix}/assets/hoop.png`} alt="" />
+                  <img class="timeline__node" data-node="3" src={`${assetsPrefix}/assets/hoop.png`} alt="" />
                   <div class="timeline__ball-wrap" id="timelineBall">
-                    <img class="timeline__ball-img" src={`${base}/assets/marker.png`} alt="" />
+                    <img class="timeline__ball-img" src={`${assetsPrefix}/assets/marker.png`} alt="" />
                   </div>
                 </div>
                 <!-- Stage labels under each stop -->
@@ -150,7 +149,7 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
                 <span class="info__measure-line info__measure-line--upper" aria-hidden="true"></span>
                 <span>06</span>
               </div>
-              <img class="info__bag" src={`${base}/assets/bag.png`} alt="" />
+              <img class="info__bag" src={`${assetsPrefix}/assets/bag.png`} alt="" />
             </div>
 
             <p class="info__copy" id="info-copy">
@@ -162,19 +161,19 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
           <div class="tabs reveal" id="tickets" role="tablist" aria-label="Important information" data-delay="300">
             <button class="tabs__item is-active" type="button" role="tab" aria-selected="true"
               data-tab="bags"
-              data-image={`${base}/assets/bag.png`}
+              data-image={`${assetsPrefix}/assets/bag.png`}
               data-copy='*Please note, no bags larger than 14&quot;x6&quot;x14&quot; will be allowed inside the building. You can refer to the bag policy in the A-Z Guide linked above.'>
               Bags
             </button>
             <button class="tabs__item" type="button" role="tab" aria-selected="false"
               data-tab="payments"
-              data-image={`${base}/assets/payments.png`}
+              data-image={`${assetsPrefix}/assets/payments.png`}
               data-copy="All concessions and retail points at Chase Center support cashless checkout. Plan on using a card or a mobile wallet for the fastest entry and in-suite service.">
               Payments
             </button>
             <button class="tabs__item" type="button" role="tab" aria-selected="false"
               data-tab="tickets"
-              data-image={`${base}/assets/tickets.png`}
+              data-image={`${assetsPrefix}/assets/tickets.png`}
               data-copy="Keep your event ticket ready on your phone before you arrive. Mobile tickets speed up security screening and help the suite host check your group in faster.">
               Tickets
             </button>
@@ -203,7 +202,7 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
           </div>
 
           <div class="closing__media">
-            <img class="closing__image" src={`${base}/assets/arena.png`} alt="Chase Center exterior" />
+            <img class="closing__image" src={`${assetsPrefix}/assets/arena.png`} alt="Chase Center exterior" />
             <div class="closing__fade" aria-hidden="true"></div>
           </div>
         </div>
@@ -217,9 +216,8 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
       const infoImg = document.querySelector('.info__bag') as HTMLImageElement | null;
       const infoVisual = document.querySelector('.info__visual');
 
-      // Track the pending fade timer so we can cancel it if the user
-      // switches tabs before the previous transition completes.
-      let fadeTimer: ReturnType<typeof setTimeout> | null = null;
+      // Track which image should be shown so stale preload callbacks are ignored.
+      let activeTabImage = '';
 
       for (const tab of tabs) {
         tab.addEventListener('click', () => {
@@ -241,18 +239,30 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
             infoVisual.className = 'info__visual info__visual--' + data.tab;
           }
 
-          // Swap visual image with a quick fade.
-          // Clear any in-flight timer first to prevent stale callbacks
-          // from a previous tab click overwriting the correct image.
+          // Swap visual image: hide immediately, preload, then fade in.
           if (infoImg && data.image) {
-            const targetImage = data.image; // capture before timeout
-            infoImg.style.transition = 'opacity 0.25s ease';
+            const targetImage = data.image;
+            activeTabImage = targetImage;
+
+            infoImg.style.transition = 'none';
             infoImg.style.opacity = '0';
-            if (fadeTimer) clearTimeout(fadeTimer);
-            fadeTimer = setTimeout(() => {
+
+            const reveal = () => {
+              if (activeTabImage !== targetImage) return;
               infoImg.src = targetImage;
-              infoImg.style.opacity = '1';
-            }, 250);
+              requestAnimationFrame(() => {
+                if (activeTabImage !== targetImage) return;
+                void infoImg.offsetHeight;
+                infoImg.style.transition = 'opacity 0.25s ease';
+                infoImg.style.opacity = '1';
+              });
+            };
+
+            const preload = new Image();
+            preload.onload = reveal;
+            preload.onerror = reveal;
+            preload.src = targetImage;
+            if (preload.complete) reveal();
           }
         });
       }
